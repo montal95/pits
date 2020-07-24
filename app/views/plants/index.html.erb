@@ -1,0 +1,8 @@
+<h1>Look at all the plants we have!</h1>
+<h3>Now growing:</h3>
+
+<% @plants.each do |plant|%>
+    <%= link_to plant.name, plant_path(plant) %><br>
+<% end %>
+<br>
+<%= button_to "New Plant", action: "new" %>

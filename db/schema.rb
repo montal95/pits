@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 2020_07_24_032321) do
     t.integer "plant_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["plant_id"], name: "index_greenhouses_on_plant_id"
+    t.index ["user_id"], name: "index_greenhouses_on_user_id"
   end
 
   create_table "plants", force: :cascade do |t|

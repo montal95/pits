@@ -9,12 +9,8 @@ Plant.destroy_all
 User.destroy_all
 Greenhouse.destroy_all
 
-20.times {User.create(name: Faker::FunnyName.two_word_name, age: Faker::Number.within(range: 8..80), occupation: Faker::Lorem.word)}
-
-20.times {Plant.create(
-        name: Faker::FunnyName.name, 
-        species: Faker::Lorem.sentence(word_count: 2), 
-        watering_gap: Faker::Number.within(range: 4..30), 
-        optimal_humidity: Faker::Number.within(range: 40..60))}
-
-20.times {Greenhouse.create(plant_id: Plant.all.sample, user_id: User.all.sample)}
+20.times {
+        user = User.create(name: Faker::FunnyName.two_word_name, age: Faker::Number.within(range: 8..80), occupation: Faker::Lorem.word)
+        plant = Plant.create(name: Faker::FunnyName.name, species: Faker::Lorem.sentence(word_count: 2), watering_gap: Faker::Number.within(range: 4..30), optimal_humidity: Faker::Number.within(range: 40..60))
+        Greenhouse.create(plant: plant, user: user)
+}
