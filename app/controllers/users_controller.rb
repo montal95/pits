@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :set_user, only: [:show, :edit]
+    before_action :set_user, only: [:show, :edit, :update]
     def index
         @users = User.all
     end
@@ -22,6 +22,15 @@ class UsersController < ApplicationController
     end
 
     def edit
+    end
+
+    def update
+        @user.update(user_params)
+        if @user.valid?
+            redirect_to user_path
+        else
+            render :edit
+        end
     end
 
     private

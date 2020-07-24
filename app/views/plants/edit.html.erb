@@ -1,0 +1,22 @@
+<h1>Update Plant</h1>
+<%= form_for @plant do |f| %>
+    <% if @plant.errors.any? %>
+        <div id="error_explanations">
+        <h2><%= pluralize(@plant.errors.count, "error") %> need to be corrected.</h2>
+            <ul>
+                <% @plant.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    <%= f.label :name%><br>
+    <%= f.text_field :name%><br>
+    <%= f.label :species%><br>
+    <%= f.text_field :species%><br>
+    <%= f.label :watering_gap%><br>
+    <%= f.text_field :watering_gap%><br>
+    <%= f.label :optimal_humidity%><br>
+    <%= f.text_field :optimal_humidity%><br>
+    <%= f.submit%>
+<% end %>

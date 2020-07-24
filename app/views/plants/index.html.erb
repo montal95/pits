@@ -6,4 +6,4 @@
     <%= link_to plant.name, plant_path(plant) %><br>
 <% end %>
 <br>
-<%= button_to "New Plant", action: "new" %>
+<%= button_to "New Plant", {action: "new"}, method: :get%>
