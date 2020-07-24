@@ -1,0 +1,13 @@
+<%= link_to 'Plants', plants_path %>
+<h1>Name: <%= @plant.name %></h1>
+<h2>Species: <%= @plant.species%></h2>
+<div>
+    <p>Water every: <%= @plant.watering_gap%> days</p>
+    <p>Optimal humidity: <%=@plant.optimal_humidity%>%</p>
+</div>
+<div>
+    <h4>Current caretakers:</h4>
+    <% @plant.users.each do |user|%>
+        <%= link_to user.name, user_path(user) %>
+    <% end %>
+</div>

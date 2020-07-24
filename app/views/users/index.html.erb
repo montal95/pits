@@ -1,3 +1,4 @@
+<%= link_to 'Plants', plants_path %>
 <h1>Welcome Gardeners!</h1>
 <h3>Profiles</h3>
 
@@ -6,4 +7,4 @@
 <% end %>
 <br>
 
-<%= button_to "New User", action: "new" %>
+<%= button_to "New User", {action: "new"}, method: :get%>
